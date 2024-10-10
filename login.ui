@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Login</class>
+ <widget class="QMainWindow" name="Login">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>340</width>
+    <height>541</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Login</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #f5f5f5; /* Fundal gri deschis */
+    font-family: Arial, sans-serif;
+    font-size: 14px;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: #f5f5f5; /* Fundal gri deschis */
+font-family: Arial, sans-serif;
+ font-size: 14px;</string>
+   </property>
+   <widget class="QLabel" name="Title_Label">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>10</y>
+      <width>121</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #333; /* Text gri închis */
+font-weight: bold;
+padding: 5px;</string>
+    </property>
+    <property name="text">
+     <string>        Login</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Username_Label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>55</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #333; /* Text gri închis */
+font-weight: bold;
+ padding: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Username</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Password_Label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #333; /* Text gri închis */
+font-weight: bold;
+ padding: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Usename_LineEdit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>281</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #007BFF;
+color:black;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Password_LineEdit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>281</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid #007BFF;
+color:black;</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Password</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Login_but">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>250</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #007BFF; /* Albastru pentru buton */
+    color: white; /* Text alb */
+    border: none; /* Fără bordură */
+    border-radius: 5px; /* Colțuri rotunjite */
+    padding: 10px; /* Padding interior */
+    font-size: 14px; /* Dimensiunea fontului */
+}
+
+QPushButton:hover {
+    background-color: #0056b3; /* Albastru mai închis la hover */
+}
+
+QPushButton:pressed {
+    background-color: #003f7f; /* Albastru și mai închis la apăsare */
+}</string>
+    </property>
+    <property name="text">
+     <string>Login</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SignUp_but">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>300</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #28A745; /* Verde pentru buton */
+    color: white; /* Text alb */
+    border: none; /* Fără bordură */
+    border-radius: 5px; /* Colțuri rotunjite */
+    padding: 10px; /* Padding interior */
+    font-size: 14px; /* Dimensiunea fontului */
+}
+
+QPushButton:hover {
+    background-color: #218838; /* Verde mai închis la hover */
+}
+
+QPushButton:pressed {
+    background-color: #1e7e34; /* Verde și mai închis la apăsare */
+}</string>
+    </property>
+    <property name="text">
+     <string>Sign Up</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Error_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>301</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> color: red; /* Culoarea textului */
+    font-weight: bold; /* Font îngroșat */
+    font-size: 14px; /* Dimensiunea fontului */
+    background-color: #f8d7da; /* Fundal roz deschis pentru a evidenția eroarea */
+    border: 1px solid #f5c6cb; /* Bordură roz deschis */
+    border-radius: 5px; /* Colțuri rotunjite */
+    padding: 10px; /* Padding interior */
+    margin-top: 10px; /* Marjă de sus pentru a separa de alte widget-uri */
+    visibility: hidden; /* Inițial, ascuns */</string>
+    </property>
+    <property name="text">
+     <string>Error Message</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Exit_but">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>440</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #DC3545; /* Roșu pentru butonul de exit */
+    color: white; /* Text alb */
+    border: none; /* Fără bordură */
+    border-radius: 5px; /* Colțuri rotunjite */
+    padding: 10px; /* Padding interior */
+    font-size: 14px; /* Dimensiunea fontului */
+}
+
+QPushButton:hover {
+    background-color: #c82333; /* Roșu mai închis la hover */
+}
+
+QPushButton:pressed {
+    background-color: #bd2130; /* Roșu și mai închis la apăsare */
+}</string>
+    </property>
+    <property name="text">
+     <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>200</y>
+      <width>31</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox { 
+        spacing: 5px; /* Spațiere între checkbox și text */
+        font-size: 14px; /* Dimensiunea textului */
+        color: #333; /* Culoarea textului */
+    }
+    QCheckBox::indicator { 
+        width: 20px; /* Lățimea checkbox-ului */
+        height: 20px; /* Înălțimea checkbox-ului */
+        border: 2px solid #007BFF; /* Marginea checkbox-ului */
+        border-radius: 3px; /* Marginile rotunjite */
+        background-color: white; /* Culoarea de fundal */
+    }
+    QCheckBox::indicator:checked { 
+        background-color: #007BFF; /* Culoarea de fundal când este selectat */
+        border: 2px solid #0056b3; /* Culoarea marginii când este selectat */
+    }
+    QCheckBox::indicator:unchecked { 
+        background-color: white; /* Culoarea de fundal când nu este selectat */
+    }</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>200</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #333; /* Text gri închis */
+font-weight: bold;
+ padding: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Show Password</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
