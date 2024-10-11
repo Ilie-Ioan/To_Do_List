@@ -1,44 +1,96 @@
-# To Do List Application
+# To-Do List Application
 
-## Overview
+## Description
 
-The **To Do List** application is a task management tool designed to help users efficiently manage their daily tasks and enhance productivity. Built using C++ and the Qt framework, this application provides a user-friendly interface for managing user accounts and tasks.
+The To-Do List application is developed using C++ and the Qt framework. It allows users to create, manage, and track their tasks efficiently. The application includes a user authentication system, where users can sign up and log in, and a task management system that lets them add and view tasks with specific details such as title, description, due date, and priority.
 
-## Current Features
+## Features
 
-### 1. User Authentication
-- **Login Menu**: Users can log in to the application by entering their username and password, which are validated against entries in the `utilizatori.txt` file.
-- **Signup Menu**: New users can create an account by filling out a registration form. The application checks for existing usernames to avoid duplicates.
+- **User Authentication**: 
+  - Users can register for new accounts and log in with existing credentials.
+  - The sign-up process includes validation for username uniqueness, valid email format, and password complexity.
+  
+- **Task Management**:
+  - Users can add tasks, which include a title, description, due date, and priority level.
+  - The application displays tasks in a list, sorted by priority.
 
-### 2. Data Management
-- User credentials (username, email, and password) are stored in a text file (`utilizatori.txt`), ensuring secure and easy access for login purposes.
+- **Dynamic User Interface**:
+  - Provides immediate feedback for user actions, including error messages and confirmation dialogs.
 
-## Upcoming Features
+- **Persistent Storage**:
+  - User data and tasks are stored in text files, ensuring data retention across sessions.
 
-### 1. Task Management
-- Users will be able to add, edit, and delete tasks, allowing for comprehensive task tracking.
+## File Structure
 
-### 2. Task Prioritization
-- Users will have the option to set priorities for their tasks, helping them focus on the most important items.
+The application is organized into several key components:
 
-### 3. Due Dates and Notifications
-- A feature to set due dates for tasks will be implemented, along with reminders to keep users on track with their deadlines.
+- **`login.h` / `login.cpp`**: Contains the `Login` class for user authentication and navigation to the task management interface.
+- **`signup.h` / `signup.cpp`**: Implements the `SignUp` class, responsible for handling new user registrations, including validation and error handling.
+- **`to_do.h` / `to_do.cpp`**: Defines the `To_Do` class, which manages task display and operations for the logged-in user.
+- **`add.h` / `add.cpp`**: Implements the `add` class, responsible for adding new tasks to the user's task list.
 
-### 4. Enhanced User Interface
-- Improvements will be made to the visual design of the application, making navigation more intuitive and user-friendly.
+## Installation
 
-## Technologies Used
-- C++
-- Qt Framework
-- File I/O
-- Object-Oriented Programming
+To build and run the application, follow these steps:
 
-## Challenges Encountered
-- Designing an intuitive user interface that enhances usability.
-- Implementing effective data management techniques to ensure reliable storage and retrieval of user information.
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   
+2. **Install Qt**: Ensure that you have Qt installed. You can download it from the [official Qt website](https://www.qt.io/download).
 
-## Learnings
-This project has significantly deepened my understanding of C++ programming and Object-Oriented Programming principles. It has also enhanced my skills in application design and database management, along with my ability to adapt to user requirements and feedback.
+3. **Open the project**: Use Qt Creator to open the `.pro` file located in the project directory.
 
-## Git Repository Location
-You can find the repository for this project at: [To Do List GitHub Repository](https://github.com/Ilie-Ioan/To_Do_List)
+4. **Build the project**: Click on the "Build" button in Qt Creator to compile the application.
+
+5. **Run the application**: After building, run the application through Qt Creator.
+
+## Class Functionality
+
+### Login Class
+- **Constructor**: Initializes the login window and sets up connections to the sign-up and to-do windows.
+- **on_SignUp_but_clicked()**: Displays the sign-up form and hides the login window.
+- **on_Login_but_clicked()**: Validates user credentials and, if successful, opens the To-Do window.
+- **isValidCredentials()**: Checks user credentials against the stored data in `utilizatori.txt`.
+- **showMessage()**: Displays a message box with a confirmation or error message.
+- **clearError()**: Clears error messages in the UI.
+
+### SignUp Class
+- **Constructor**: Initializes the sign-up window and loads existing users from the file.
+- **on_SignUp_but_clicked()**: Validates user input and registers a new user if all checks pass.
+- **loadUsers()**: Loads existing users from `utilizatori.txt` to check for unique usernames.
+- **ValidateInput()**: Validates that all fields are filled and that passwords match.
+- **isUserTaken()**: Checks if the entered username is already taken.
+- **isEmailValid()**: Validates the format of the email address.
+- **isValidPassword()**: Checks if the password meets the complexity requirements.
+- **showMessage()**: Displays a confirmation message box.
+- **saveUser()**: Saves the new user's details to the `utilizatori.txt` file.
+- **on_Cancel_but_clicked()**: Cancels the sign-up process and returns to the login window.
+- **on_checkBox_stateChanged()**: Toggles password visibility for the password field.
+- **on_checkBox_2_stateChanged()**: Toggles password visibility for the confirmation field.
+
+### To_Do Class
+- **Constructor**: Initializes the To-Do window and sets up the task management interface.
+- **set_Username()**: Displays the logged-in user's name and loads their tasks.
+- **loadTasksForUser()**: Reads and displays tasks from the user's task file, sorted by priority.
+- **on_add_but_clicked()**: Opens the task addition window and hides the current interface.
+- **on_refresh_but_clicked()**: Reloads the tasks for the currently logged-in user.
+- **on_exit_but_clicked()**: Exits the application.
+- **on_sign_button_clicked()**: Returns to the login window.
+
+### Add Class
+- **Constructor**: Initializes the task addition window, including setting up the priority combo box.
+- **on_add_butt_clicked()**: Validates the input fields and adds a new task to the user's task file.
+- **setUsername()**: Sets the current username for the task file.
+- **reset_fields()**: Resets the input fields to their default state.
+- **on_close_butt_clicked()**: Closes the task addition window and returns to the To-Do list.
+
+## Future Enhancements
+
+- **Password Hashing**: Implement secure password storage using hashing (e.g., SHA-256) to enhance security.
+- **Task Editing and Deletion**: Allow users to edit or delete existing tasks.
+- **Sorting and Filtering**: Implement advanced sorting and filtering options for tasks.
+- **Due Date Reminders**: Add a feature to notify users of upcoming due dates.
+- **User Preferences**: Enable users to customize their application experience (e.g., themes, layouts).
+
