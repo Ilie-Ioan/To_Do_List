@@ -7,12 +7,23 @@ Login::Login(QWidget *parent)
     , ui(new Ui::Login)
 {
     ui->setupUi(this);
+    ui->Error_label->setVisible(false);
     signUpForm = new SignUp(this);
-    connect(signUpForm, &SignUp::returnToLogin, this, [this]() {
+    connect(signUpForm, &SignUp::returnToLogin, this, [this](){
+        clearError();
         this->show();
         signUpForm->hide();
+
     });
-     ui->Error_label->clear();
+    ui->Error_label->clear();
+    toDoWindow = new To_Do(this);
+    connect(toDoWindow,&To_Do::returnToLogin,this,[this](){
+        this->show();
+        toDoWindow->hide();
+
+
+    });
+
 }
 
 Login::~Login()
@@ -48,10 +59,10 @@ void Login::on_Login_but_clicked()
     //qDebug() << "Password entered:" << password;
      if (isValidCredentials(username, password))
     {
+        toDoWindow->set_Username(username);
         showMessage("User logged successfully.");
-          To_Do *toDoWindow = new To_Do(this);
-          toDoWindow->show();
-          this->close();
+        toDoWindow->show();
+        this->hide();
 
      }
      else
@@ -99,9 +110,11 @@ bool Login::isValidCredentials(const QString &username, const QString &password)
 }
 void Login::clearError() {
     ui->Error_label->clear();
+    ui->Error_label->setVisible(false);
 }
 void Login::setError(const QString &message) {
     ui->Error_label->setText(message);
+    ui->Error_label->setVisible(true);
 }
 void Login::showMessage(const QString &mesaj)
 {

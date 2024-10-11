@@ -6,13 +6,260 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>483</width>
+    <height>457</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #f0f0f0</string>
+  </property>
+  <widget class="QLabel" name="User_label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>331</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 16px; font-weight: bold; color: #333;</string>
+   </property>
+   <property name="text">
+    <string>Loggend in as:</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="Task_List">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>120</y>
+     <width>351</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget {
+    background-color: #FFFFFF; /* White background */
+    color: #333333; /* Dark text color */
+    border: 1px solid #007BFF; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding inside the list widget */
+}
+
+QListWidget::item {
+    padding: 10px; /* Padding for each item */
+}
+
+QListWidget::item:selected {
+    background-color: #007BFF; /* Blue background when selected */
+    color: white; /* White text when selected */
+}
+
+QListWidget::item:hover {
+    background-color: #E7E7E7; /* Light gray background on hover */
+}
+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sign_button">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>380</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 9px;
+}
+QPushButton:hover {
+    background-color: #218838;
+}</string>
+   </property>
+   <property name="text">
+    <string>Sign Out</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="add_but">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>121</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#add_but {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px; 
+    font-size: 12px; 
+    min-width: 80px; 
+    min-height: 30px; 
+}
+QPushButton#add_but:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}</string>
+   </property>
+   <property name="text">
+    <string>Add task</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="edit_but">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>180</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#edit_but {
+    background-color: #FFC300; /* Yellow color */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px; /* Reduced padding */
+    font-size: 12px; /* Adjusted font size */
+    min-width: 80px; /* Set a fixed width */
+    min-height: 30px; /* Set a fixed height */
+}
+QPushButton#edit_but:hover {
+    background-color: #FFB300; /* Darker yellow on hover */
+}</string>
+   </property>
+   <property name="text">
+    <string>Edit Task</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="delete_but">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>240</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#delete_but {
+    background-color: #DA190B; /* Dark red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px; /* Reduced padding */
+    font-size: 12px; /* Adjusted font size */
+    min-width: 80px; /* Set a fixed width */
+    min-height: 30px; /* Set a fixed height */
+}
+QPushButton#delete_but:hover {
+    background-color: #A0120B; /* Darker red on hover */
+}</string>
+   </property>
+   <property name="text">
+    <string>Delete Task</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="exit_but">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>380</y>
+     <width>100</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#exit_but {
+    background-color: #FF5733; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px; /* Reduced padding */
+    font-size: 12px; /* Adjusted font size */
+    min-width: 80px; /* Set a fixed width */
+    min-height: 30px; /* Set a fixed height */
+}
+QPushButton#exit_but:hover {
+    background-color: #C70039; /* Darker red on hover */
+}</string>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>0</y>
+     <width>281</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> font-size: 24px; /* Larger font size for visibility */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark gray color */
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 10px; /* Padding around the text */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Centered text */
+    margin-bottom: 20px; /* Spacing below the label */</string>
+   </property>
+   <property name="text">
+    <string>      TO DO LIST</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="refresh_but">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>303</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #6F42C1; /* Green background */
+    color: white; /* White text color */
+    border: 2px solid #6F42C1; /* Same color as the background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 8px 12px; /* Padding inside the button */
+    font-size: 12pt; /* Font size */
+}
+
+QPushButton:hover {
+    background-color: #5A2D9B; /* Darker green on hover */
+}
+
+QPushButton:pressed {
+    background-color: #5A2D9B; /* Even darker green when pressed */
+}</string>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

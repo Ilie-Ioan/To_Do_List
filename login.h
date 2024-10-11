@@ -33,6 +33,7 @@ private slots:
 private:
     Ui::Login *ui;
     SignUp *signUpForm;
+    To_Do *toDoWindow;
     bool isValidCredentials(const QString &username, const QString &password);
     void clearError();
     void setError(const QString &message);
