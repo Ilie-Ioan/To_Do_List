@@ -35,8 +35,8 @@ To build and run the application, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/Ilie-Ioan/To_Do_List.git
+   cd To_Do_List
    
 2. **Install Qt**: Ensure that you have Qt installed. You can download it from the [official Qt website](https://www.qt.io/download).
 
